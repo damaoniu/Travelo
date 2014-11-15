@@ -1,0 +1,79 @@
+.bookingTable {
+    width: 98%;
+}
+
+
+.bookingTable tr td {
+    border-right: solid 1px #dfdfdf;
+}
+
+.bookingTable tr td div{
+    vertical-align: top;
+}
+
+
+.bookingTable tr td:first-child {
+    max-width: 50px;
+    vertical-align: middle;
+}
+
+
+.bookingTable tr td:nth-child(2), .bookingTable tr td:nth-child(3){
+    min-width: 350px;
+}
+
+.unApprovedBook {
+    background: #ffffe0;
+}
+.bookingTable tr td {
+	position: relative;
+}
+
+.bookingTable tr td {
+    padding-bottom: 20px;
+}
+.bookingTable tr td .row-actions {
+    position: absolute;
+    bottom: 5px;
+}
+
+.row-actions form{
+    display: inline;
+}
+
+.bookingfields {
+    display: inline-block;
+    width: 45%;
+ 
+}
+
+.row-actions a {
+    margin-right: 5px;
+}
+
+.adminExtraMessage {
+    margin-top:20px; 
+    width: 100%;  
+}
+.adminExtraMessage b {
+ 
+}
+
+.adminExtraMessage p{
+    border: solid 2px #dfdfdf;
+    
+    border-radius:5px;
+    padding: 10px; 
+}
+
+p.unappruvedLable {
+    color: #bc0b0b;  
+}
+
+@-moz-document url-prefix() {
+    .bookingTable tr td .row-actions {
+		position: relative;
+		margin-top: 100px;
+	}
+}
+

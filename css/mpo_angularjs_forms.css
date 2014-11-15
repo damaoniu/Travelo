@@ -1,0 +1,953 @@
+/* CSS for MPO AngularJS forms, by SurgeWP.com */
+		@font-face {
+		font-family: 'League Gothic';
+		src: url('../fonts/league_gothic-webfont.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/league_gothic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		     url('../fonts/league_gothic-webfont.woff') format('woff'), /* Modern Browsers */
+		     url('../fonts/league_gothic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+		     url('../fonts/league_gothic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+		}
+		*, *:before, *:after {
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+		}
+		#mpoapp *, #mpoapp *:before, #mpoapp *:after {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		#mpoapp {
+			margin: 10px 0 30px;
+		}
+		#mpoapp p > br + br {
+			content: " ";
+			display: block;
+			margin-top: 10px;
+		}
+		#mpoapp #confirm-overlay {
+			position: fixed;
+			top:0;
+			right:0;
+			left:0;
+			bottom: 0;
+			background-color: #000;
+			background-color: rgba(0,0,0,0.3);
+			z-index: 1500;
+			display: none;
+		}
+		#mpoapp #confirm-overlay.active {
+			display: block;
+		}
+		#mpoapp span.done {
+			text-decoration: line-through;
+		}
+		#mpoapp .mpo-admin {
+			background-color: rgb(255,255,255);
+			border: 2px solid  rgb( 200, 50,50);
+			padding: 5px 10px;
+			color: rgb( 200, 50,50);;
+			margin: 10px 0;
+		}
+		#mpoapp .mpo-admin a {
+			position: relative;
+		}
+		#mpo-travel-form #teachers-kit a.btn-add-event:before {
+			content: "\f055";
+		}
+		#mpoapp .delete-admin-item {
+			position: absolute;
+			left:5px;
+			top:50%;
+			margin-top:-10px;
+			z-index: 200;
+			color: RED;
+			cursor: pointer;
+		}
+		#mpoapp .delete-admin-item:hover {
+			text-decoration: underline;
+		}
+		#mpoapp .admin-page .shift-section {
+			padding-left: 20px;
+		}
+		#swp-view-options a.active{
+			color: #000 !important;
+			cursor: default;
+			text-decoration: none !important;
+		}
+		#mpoapp ul {
+			margin:0;
+		}
+		#mpoapp .client-box {
+			background-color: rgb(215,215,215);
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.pointer {
+			cursor: pointer;
+		}
+		input[type="checkbox"].form-control {
+			max-height: 20px;
+			max-width: 20px;
+			margin-top: 0;
+		}
+		#mpoapp input[type=text],
+		#mpoapp input[type=password],
+		#mpoapp input[type=number],
+		#mpoapp textarea {
+			background: rgb(255, 255, 255);
+			resize: none;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			font-style: normal;
+			line-height: 18px;
+			border: 1px solid rgb(204,204,204);
+			border-top: 1px solid rgb(204,204,204);
+			border-bottom: 1px solid rgb(204,204,204);
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			padding: 5px 10px;
+			color: rgb(0,0,0);
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+		#mpoapp input[type=number] {
+			height:30px;
+		}
+		.topsearch .stext {
+
+		}
+		#mpoapp #confirm-dialog {
+			padding: 0 15px 15px 15px;
+		}
+		#mpoapp #confirm-dialog .button-wrapper {
+			width:49%;
+			text-align: center;
+		}
+		#mpoapp #confirm-dialog .button-wrapper.single {
+			width:100%;
+		}
+		#mpoapp .mpo-dialog-title {
+			padding:7px 8px 6px;
+			font-size: 16px;
+			font-weight: bold;
+			background-color: rgb(57, 57, 57);
+			color: rgb(179, 207, 0);
+			border-bottom: 1px solid rgb(150,150,150);
+		}
+		#mpoapp .mpo-dialog-text {
+			padding: 15px;
+			text-align: center;
+		}
+		#mpoapp #mpo-dialog-timer {
+			text-align: center;
+		}
+		#mpoapp #mpo-dialog-timer > span {
+			display: inline-block;
+			border: 1px solid rgb(0, 0, 0);
+			padding: 10px;
+			margin-bottom: 20px;
+			font-weight: bold;
+			border-radius: 4px;
+		}
+		#mpoapp #mpo-confirm-message {
+			position: fixed;
+			top: 30%;
+			left: 50%;
+			width: 400px;
+			margin-left: -200px;
+			max-width: 100%;
+			background-color: #FFF;
+			box-shadow: 0 0 6px rgba(0,0,0,0.8);
+			color: #000;
+			border:1px solid rgb(50,50,50);
+			z-index: 1700;
+			display: none;
+		}
+		#mpoapp #mpo-confirm-message.active {
+			display: block;
+		}
+		#mpoapp .mpo-lower-message {
+			position: fixed;
+			bottom: 20%;
+			left: 50%;
+			margin-left: -100px;
+			padding: 6px;
+			text-align: center;
+			font-size: 10px;
+			line-height: 12px;
+			color: #000;
+			background-color: #FFF;
+			border: 1px solid RED;
+			box-shadow: 0 0 4px rgba(0,0,0,0.8);
+			width: 200px;
+			z-index: 1600;
+			display: none;
+		}
+		#mpoapp #mpo-delay-message {
+			z-index: 1700;
+		}
+		#mpoapp .mpo-lower-message.active {
+			display: block;
+		}
+		#mpoapp input[type=text].input-sm {
+			height: 30px !important;
+		}
+		#mpoapp .swp-client-info a {
+			color: rgb(171, 89, 188);
+		}
+		#mpoapp .swp-header {
+			margin-bottom:50px;
+		}
+		#mpoapp .mpo-footer-nav button {
+			height: 34px;
+			text-shadow: none;
+		}
+		#mpo-travel-form .mpo-form-wrapper {
+			background-color: rgb(215,215,215);
+			padding:6px;
+		}
+		#mpo-travel-form .mpo-form-subwrapper {
+			position: relative;
+			padding:30px;
+			background-color: rgb(240,240,240);
+			min-height: 400px;
+		}
+		#mpoapp #mpo-loading-message {
+			position: absolute;
+			top:0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background-color: #111;
+			color:#FFF;
+			z-index: 1500;
+		}
+		/*#mpoapp #mpo-quick-message {
+			position: fixed;
+			display: none;
+			top:5%;
+			left:50%;
+			width:200px;
+			margin-left: -100px;
+			padding: 10px;
+			text-align: center;
+			background-color: rgb(235,15,15);
+			color:#FFF;
+			font-size: 18px;
+			font-weight: bold;
+			box-shadow: 0 0 3px rgb(0,0,0);
+			z-index: 1550;
+		}
+		#mpoapp #mpo-quick-message.active {
+			display: block;
+		}*/
+
+		#mpo-travel-form ul.nav{
+			background-color: rgb(57,57,57);
+			padding-top:6px;
+			padding-left:6px;
+			padding-right:6px;
+		}
+
+		#mpo-travel-form .nav-tabs.nav-justified>li>a {
+			color: rgb(179,207,0);
+			font-family: "Open Sans";
+			white-space: nowrap;
+			/*border:none !important;*/
+		}
+
+		#mpo-travel-form .mpo-form-navigation li:not(.active) a {
+			cursor: pointer;
+		}
+
+		#mpo-travel-form .nav>li>a:hover {
+			background-color: rgb(250,250,250);
+		}
+		#mpo-travel-form .nav-tabs.nav-justified>li>a,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a:hover,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a:focus {
+			font-weight: bold;
+			border-radius: 0;
+		}
+		#mpo-travel-form .nav-tabs.nav-justified>li>a,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a:hover,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a:focus {
+			border-bottom: 1px solid transparent;
+		}
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a, {
+			border-bottom: 1px solid rgb(215, 215, 215);
+		}
+		#mpo-travel-form .nav-tabs>li.active>a,
+		#mpo-travel-form .nav-tabs>li.active>a:hover,
+		#mpo-travel-form .nav-tabs>li.active>a:focus,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a:hover,
+		#mpo-travel-form .nav-tabs.nav-justified>.active>a:focus {
+			color:rgb(0,0,0);
+			background: rgb(215,215,215);
+		}
+		#mpo-travel-form h1,
+		#mpo-travel-form h2,
+		#mpo-travel-form h3,
+		#mpo-travel-form h4,
+		#mpo-travel-form h5,
+		#mpo-travel-form h6 {
+			font-family: "League Gothic";
+			letter-spacing: 0.05em;
+		}
+		#add-events label {
+			font-size: 12px;
+		}
+		#mpo-travel-form p {
+			font-family: "Open Sans";
+			line-height: 2em;
+		}
+		#mpo-travel-form .mpo-footer-nav {
+			margin: 20px 0;
+			display: none;
+		}
+		#mpo-travel-form .mpo-footer-nav.active {
+			display: block;
+			min-height: 34px;
+		}
+		#mpo-travel-form .btn.btn-navigation {
+
+		}
+		#mpo-travel-form .btn.btn-navigation {
+			background: rgb(25,25,25);
+			background: rgb(25,25,25) -webkit-radial-gradient(50% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.3) 140%, rgba(0,0,0,0.1) 150%);
+			background: rgb(25,25,25) radial-gradient(50% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.3) 140%, rgba(0,0,0,0.2) 150%);
+			color:rgb(255,255,255);
+		}
+		#mpo-travel-form .btn.btn-navigation:hover {
+			background: rgb(50,50,50);
+			background: rgb(25,25,25) -webkit-radial-gradient(60% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.2) 140%, rgba(0,0,0,0.1) 150%);
+			background: rgb(25,25,25) radial-gradient(60% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.2) 140%, rgba(0,0,0,0.2) 150%);
+			color:rgb(200,200,200);
+		}
+
+		#mpo-travel-form .btn.btn-mpo {
+			background: rgb(171,89,188);
+			background: rgb(171,89,188) -webkit-radial-gradient(50% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.3) 140%, rgba(0,0,0,0.1) 150%);
+			background: rgb(171,89,188) radial-gradient(50% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.3) 140%, rgba(0,0,0,0.2) 150%);
+			color:rgb(255,255,255);
+		}
+		#mpo-travel-form .btn.btn-mpo:hover {
+			background: rgb(50,50,50);
+			background: rgb(171,89,188) -webkit-radial-gradient(60% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.2) 140%, rgba(0,0,0,0.1) 150%);
+			background: rgb(171,89,188) radial-gradient(60% 28% ellipse at 50% 10%, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0.2) 140%, rgba(0,0,0,0.2) 150%);
+			color:rgb(255,255,255);
+		}
+		#mpo-travel-form hr {
+			border-color: rgb(194,194,194);
+		}
+		#mpo-travel-form #form_checklist {
+			padding: 10px 0;
+		}
+		#mpo-travel-form .check-list {
+			margin: 40px 0 10px;
+		}
+		#mpo-travel-form .check-list a {
+			color:rgb(100,100,100);
+		}
+		#mpo-travel-form .check-list .mpo-event-link a, #mpo-travel-form .check-list .btn-delete-event a {
+			text-decoration: underline;
+		}
+		#mpo-travel-form .check-list .mpo-event-title {
+			position: relative;
+			padding-left: 30px;
+		}
+		#mpo-travel-form .check-list .mpo-event-title.list-form:before {
+			top:0;
+			display: block;
+			height:16px;
+			width:16px;
+			line-height: 16px;
+			font-family: "FontAwesome";
+			content: "\f0f6"; /* file-o */
+			color:rgb(100,100,100);
+			position: absolute;
+			left: 10px;
+		}
+		#mpo-travel-form .check-list .mpo-event-title.checkpoint:before {
+			top:0;
+			display: block;
+			height:16px;
+			width:16px;
+			line-height: 16px;
+			font-family: "FontAwesome";
+			content: "\f017"; /* clock-o */
+			color:rgb(167, 211, 19);
+			position: absolute;
+			left: 10px;
+			font-size: 18px;
+		}
+		#mpo-travel-form .check-list .mpo-event-title.payment:before {
+			display: block;
+			font-family: "FontAwesome";
+			content: "\f155";
+			color: #FFF;
+			border-radius: 50%;
+			height: 16px;
+			width: 16px;
+			line-height: 16px;
+			text-align: center;
+			background-color:rgb(255,174,0);
+			position: absolute;
+			left: 10px;
+			top: 0;
+			font-size: 10px;
+		}
+		#mpo-travel-form .check-list .mpo-event-title.other:before {
+			display: block;
+			/*font-family: "FontAwesome";*/
+			content: "E";
+			color: #FFF;
+			border-radius: 50%;
+			height: 16px;
+			width: 16px;
+			line-height: 16px;
+			text-align: center;
+			background-color:rgb(171, 89, 188);
+			position: absolute;
+			left: 11px;
+			top: 0;
+			font-size: 11px;
+		}
+		.mpo-text-light-purple {
+			color: rgb(172,87,190);
+		}
+		.mpo-text-normal {
+			font-weight: normal;
+		}
+		input[type=checkbox].mpo-sm-checkbox {
+			margin: 0 5px;
+			vertical-align: middle;
+		}
+		#mpo-travel-form .data-row {
+			border-top: 1px solid rgb(194,194,194);
+		}
+		#mpo-travel-form div.row.data-row.last {
+			border-bottom: 1px solid rgb(194,194,194);
+		}
+		#mpo-travel-form .data-row > div {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		#mpo-travel-form .data-row .data-data {
+			margin-top: 12px;
+			margin-bottom: 12px;
+		}
+		#mpo-travel-form .data-row.message > div {
+		}
+		#mpo-travel-form input[type=text] {
+			border:1px solid rgb(204,204,204);
+		}
+		#mpo-travel-form .btn-add-event {
+			padding-left: 20px;
+			height: 20px;
+			line-height: 20px;
+			color:rgb(171, 89, 188);
+		}
+		#mpo-travel-form .btn-add-event:before {
+			font-family: "FontAwesome";
+			font-weight: normal;
+			font-size: 20px;
+			display: inline-block;
+			margin-right: 10px;
+			content: "\f055";
+			text-align: center;
+			height:20px;
+			width:20px;/*
+			border-radius: 50%;
+			background-color: #DDD;*/
+			text-shadow: 0 0 3px #000;
+			color:#FFF;
+		}
+		#mpo-travel-form .edit-event-wrapper {
+			position: relative;
+			padding-right: 60px;
+		}
+		#mpo-travel-form .btn-delete-event {
+			position: absolute;
+			right:0;
+			margin-right: 15px;
+		}
+		#mpo-travel-form .btn-delete-event a {
+			color:rgb(156, 92, 92);
+		}
+		#mpo-travel-form label,
+		#mpo-travel-form select,
+		#mpo-travel-form input[type="email"],
+		#mpo-travel-form input[type="date"],
+		#mpo-travel-form input[type="number"],
+		#mpo-travel-form input[type="password"],
+		#mpo-travel-form input[type="tel"],
+		#mpo-travel-form input[type="url"],
+		#mpo-travel-form input[type="text"] {
+			max-width: 100%;
+		}
+		#mpo-travel-form .mpo-bg-light-gray {
+			background-color: rgb(200,200,200);
+			border-top: 1px solid rgb(150,150,150);
+			border-bottom: 1px solid rgb(150,150,150);
+		}
+		#mpo-travel-form #mpo-helper-menu {
+			position: absolute;
+			top:10px;
+			right:10px;
+			left:10px;
+			height: 24px;
+			text-align: right;
+		}
+		#mpo-travel-form .helper-menu-item {
+			position: relative;
+			display: inline-block;
+			padding-left:20px;
+		}
+		#mpo-travel-form .helper-menu-item a {
+			font-size: 18px;
+			padding:2px 4px;
+			color:#000;
+		}
+		#mpo-travel-form .helper-menu-item a i.fa {
+			/*text-shadow: 0 1px 1px rgb(0,0,0);*/
+			padding-right: 8px;
+		}
+		#mpo-travel-form #helper-menu-save a i.fa {
+			color:rgb(235,15,15);
+		}
+		#mpo-travel-form #helper-menu-download a i.fa {
+			color:rgb(167, 211, 19);
+		}
+		#mpo-travel-form #helper-menu-print a i.fa {
+			color:rgb(0,0,0);
+		}
+		#mpo-travel-form #helper-menu-help a i.fa {
+			color:rgb(171, 89, 188);
+		}
+		#mpo-travel-form #teachers-kit a {
+			color:#222;
+		}
+
+		#mpo-travel-form #teachers-kit a:before {
+			font-family: "FontAwesome";
+			content: "\f016";
+			display: inline-block;
+			margin:0 10px 0 14px;
+			width:20px;
+			text-align: center;
+		}
+		#mpo-travel-form #teachers-kit a.pdf:before {
+			content:"\f1c1";
+			color:rgb(191,55,64);
+		}
+		#mpo-travel-form #teachers-kit a.zip:before {
+			content:"\f1c6";
+			color:rgb(191,55,64);
+		}
+		#mpo-travel-form #teachers-kit a.img:before,
+		#mpo-travel-form #teachers-kit a.png:before,
+		#mpo-travel-form #teachers-kit a.gif:before {
+			content:"\f1c5";
+			color:rgb(191,55,64);
+		}
+		#mpo-travel-form #teachers-kit a.xls:before {
+			content:"\f1c3";
+			color:rgb(143,179,29);
+		}
+		#mpo-travel-form #teachers-kit a.doc:before {
+			content:"\f1c2";
+			color:rgb(86,151,209);
+		}
+		#mpo-travel-form #teachers-kit a.txt:before {
+			content:"\f0f6";
+			color:rgb(191,55,64);
+		}
+		#mpo-travel-form #teachers-kit a.ppt:before,
+		#mpo-travel-form #teachers-kit a.pps:before {
+			content:"\f1c4";
+			color:rgb(253,134,50);
+		}
+		#mpo-travel-form .teachers-kit-item {
+			margin-top:10px;
+		}
+
+		#mpo-travel-form span.required {
+			color:rgb(156, 92, 92);
+		}
+
+		#mpo-travel-form .mpo-labels-md {
+			margin: 10px 0 0 0;
+			font-size: 11px;
+			font-weight: bold;
+		}
+
+		#mpo-travel-form .section-header p {
+			margin-top:10px;
+		}
+
+		.mpo-table-item {
+			position: relative;
+		}
+
+		#teachers-kit {
+			margin-bottom: 30px;
+		}
+
+		/* verticle align */
+			#mpo-travel-form .row-labels > div {
+				position: relative;
+			}
+			#mpo-travel-form .row-labels .mpo-table {
+				display: table;
+				height: 24px;
+			}
+			#mpo-travel-form .row-labels .mpo-table > p {
+				display: table-cell;
+				vertical-align: bottom;
+				line-height: 14px;
+				font-weight: bold;
+			}
+
+		#mpoapp hr.mpo-horizontal {
+			margin: 10px 0;
+			border-top: 1px solid rgb(194, 194, 194) !important;
+		}
+
+		/* participants */
+		span.mpo-unit-count {
+			position: absolute;
+			right: 100%;
+			top: 0;
+			line-height: 30px;
+		}
+		span.mpo-unit-delete a {
+			margin:2px 0;
+			height: 26px;
+			width: 30px;
+			z-index: 200;
+		}
+		span.mpo-unit-delete {
+			position: absolute;
+			right: -10px;
+			top: 0;
+			line-height: 30px;
+			font-size: 24px;
+			color:rgb(156,92,92);
+			z-index: 200;
+		}
+		span.mpo-unit-delete i.fa {
+			line-height: 30px;
+			font-size: 20px;
+			color:rgb(156,92,92);
+			z-index: 200;
+			/*text-shadow: 0 1px 1px rgb(0,0,0);*/
+		}
+		#participants-wrapper > div,
+		#rooms-wrapper > div {
+			position: relative;
+		}
+		#participants-wrapper select,
+		#rooms-wrapper select {
+			padding-left: 0px;
+			padding-right:0px;
+		}
+		#mpo-travel-form .row-table-parent {
+			margin-bottom:6px;
+		}
+		#participants-list-footer {
+			font-weight: bold;
+		}
+		#participants-list-footer {
+			min-height: 26px;
+			line-height: 26px;
+		}
+
+		#participants-list-footer a {
+			color:rgb(171, 89, 188);
+		}
+
+		/* diet-med */
+		#mpoapp hr.verticle-center {
+			position: absolute;
+			height: 100%;
+			width: 2px;
+			background-color: rgb(150,150,150) !important;
+			border:0 !important;
+			margin:0;
+			top:0;
+			right: 50%;
+			margin-right: -1px !important;
+			bottom: 0;
+		}
+		#dietary-medical hr.verticle-center {
+			margin-right: 10px !important;
+		}
+		.dm-list-wrapper {
+			position: relative;
+			/*min-height: 400px;*/
+		}
+		#list-participant-container {
+			border-top:2px solid rgb(150,150,150);
+			border-right:2px solid rgb(150,150,150);
+			border-bottom:2px solid rgb(200,200,200);
+			border-left:2px solid rgb(200,200,200);
+			/*box-shadow: inset 1px 1px 2px 0 rgb(150,150,150);*/
+			position: relative;
+			background-color: #FFF;
+		}
+		#list-participant-container.dualview {
+			margin-right: 40px;
+		}
+		#list-participant-container .participant-list-item {
+			padding: 5px 10px;
+			border-bottom: 1px solid rgb(150,150,150);
+			/*box-shadow: inset 0px -1px 0px 0 rgb(150,150,150);*/
+		}
+		#list-participant-container .participant-list-item.active {
+			background-color: rgb(179, 207, 0);
+			color:#FFF;
+			padding: 5px 10px;
+			box-shadow: inset 0px 1px 1px 0 rgb(150,150,150);
+		}
+		#list-participant-container .participant-list-item.last {
+			border-bottom: none !important;
+		}
+		#list-participant-container .participant-list-item.first {
+			border-top: none !important;
+		}
+		#dietary-medical-details ul {
+			list-style: none;
+			padding-left: 20px;
+		}
+		#dietary-medical-details ul input[type="checkbox"] {
+			margin-right: 10px;
+		}
+
+		/*span.unit-count {
+			position: absolute;
+			left: -10px;
+			top: 0;
+			line-height: 30px;
+		}
+		span.unit-delete {
+			position: absolute;
+			right: -10px;
+			top: 0;
+			line-height: 30px;
+		}*/
+
+		/* Rooming */
+		#rooms-wrapper > div {
+			position: relative;
+		}
+
+	/* Payment Schedule */
+	#payment-schedule {
+
+	}
+	.payment-schedule-wrapper {
+		position: relative;
+	}
+	#payment-schedule #pay-sch-left-wrap {
+		padding: 0 20px 0 0;
+	}
+	#payment-schedule #pay-sch-right-wrap {
+		padding: 0 0 0 20px;
+	}
+	#payment-schedule .pay-sch-section {
+		margin-bottom: 50px;
+	}
+	#payment-schedule .date-field {
+		font-style: italic;
+	}
+	#payment-schedule #message-center > div {
+		font-size: 11px;
+	}
+	#payment-schedule {
+
+	}
+	#payment-schedule {
+
+	}
+
+	.no-wrap {
+		white-space: nowrap;
+	}
+
+		/* Custom Repsonsive */
+	/* wp admin adjust */
+	body.admin-bar .col-side-menu {
+		margin-top: 32px;
+	}
+	.visible-xxs {
+		display: none;
+	}
+	/*--Break Points, Bootstrap Based +Custom */
+		/* Custom Break (up to 320) */
+			@media only screen and (max-width: 320px) {
+			}
+		/* Custom Break (321 to 480) */
+			@media only screen and (min-width: 321px) and (max-width: 480px) {
+			}
+		/* XXS only (Custom up to 480) */
+			@media only screen and (max-width: 480px) {
+				.col-xxs {
+					width: 100% !important;
+					margin-left: 0 !important;
+				}
+				.xxs.pull-left {
+					float: none !important;
+					width: 100%;
+					text-align: center;
+				}
+				.visible-xxs {
+					display: block;
+				}
+				.visible-inline-xxs {
+					display: inline;
+				}
+				.hidden-xxs {
+					display: none !important;
+				}
+				.text-right,
+				.text-left {
+					text-align: center !important;
+				}
+				.btn.btn-navigation {
+					min-width:80%;
+					margin-bottom: 10px;
+				}
+				.col-xs-3.col-xxs-6 {
+					width:50% !important;
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+		/* XS only (Custom 481 to 767) */
+			@media only screen and (min-width: 481px) and (max-width: 767px) {
+				#mpo-travel-form div.mpo-adjust-col-right-xxs {
+					padding-right: 0 !important;
+				}
+				#mpo-travel-form div.mpo-adjust-col-left-xxs {
+					padding-left: 0 !important;
+				}
+				#mpo-travel-form .mpo-labels-md.label-student-adult {
+					margin-left: -20px;
+					text-align: center;
+				}
+			}
+		/* XS and down */
+			@media only screen and (max-width: 767px) {
+				#mpo-travel-form .mpo-form-subwrapper {
+					padding:5px;
+				}
+				#mpo-travel-form #mpo-helper-menu {
+					position: relative;
+					height: auto;
+					text-align: center;
+				}
+				#mpo-travel-form .helper-menu-item {
+					padding-left:10px;
+					padding-right:10px;
+				}
+				#list-participant-container.dualview {
+					margin-right: 20px;
+				}
+				#list-participant-container {
+					margin-right: 20px;
+					margin-left: 20px;
+				}
+				#deposit-schedule .text-left,
+				#deposit-schedule .text-right {
+					text-align: center !important;
+				}
+				#mpo-travel-form #deposit-schedule .data-row .data-data {
+					margin-bottom: 0;
+					margin-top: 0;
+				}
+				#mpo-travel-form #deposit-schedule .data-row {
+					padding-top:10px;
+					padding-bottom: 20px;
+				}
+				#mpo-travel-form #deposit-schedule .data-row .data-data.xs-margin-top {
+					margin-bottom: 0;
+					margin-top: 14px;
+				}
+				.visible-xs.inline {
+					display: inline !important;
+				}
+			}
+		/* XS and up (Custom 480 and up)  */
+			@media only screen and (min-width: 481px) {
+			}
+		/* SM and UP */
+			@media (min-width: 768px) {
+			}
+		/* SM and Down */
+			@media only screen and (max-width: 991px) {
+				#payment-schedule #pay-sch-left-wrap,
+				#payment-schedule #pay-sch-right-wrap {
+					padding: 0;
+				}
+			}
+		/* SM only */
+			@media only screen and (min-width: 768px) and (max-width: 991px) {
+				#mpo-travel-form .mpo-form-subwrapper {
+					padding:30px 20px 20px 20px;
+				}
+			}
+		/* MD and Up */
+			@media (min-width: 992px) {
+				div.mpo-adjust-col-left-md {
+					padding-left: 0;
+				}
+				div.mpo-adjust-col-right-md {
+					padding-right: 0;
+				}
+			}
+		/* MD and Down */
+			@media only screen and (max-width: 1199px) {
+				#mpo-travel-form .mpo-table-item {
+					background-color: rgb(215, 215, 215);
+					padding: 10px 0;
+					/*box-shadow: 0px 1px 3px 0px rgb(0,0,0);*/
+				}
+				#mpo-travel-form .row-table-parent {
+					margin-top: 12px;
+				}
+				span.mpo-unit-count {
+					position: absolute;
+					left: 1px;
+					top: 1px;
+					line-height: 30px;
+					background: rgb(255, 255, 255);
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					text-align: center;
+					border-radius: 0;
+				}
+				span.mpo-unit-delete {
+					right: 6px;
+					top: 0;
+					line-height: 30px;
+					font-size: 24px;
+				}
+			}
+		/* MD Only */
+			@media (min-width: 992px) and (max-width: 1199px) {
+			}
+		/* LG and Up */
+			@media (min-width: 1200px) {
+				div.mpo-adjust-col-left {
+					padding-left: 0;
+				}
+				div.mpo-adjust-col-right {
+					padding-right: 0;
+				}
+			}

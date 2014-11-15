@@ -1,0 +1,2 @@
+[09-Apr-2014 21:47:37] PHP Fatal error:  Call to undefined function  language_attributes() in /home3/godman69/public_html/projects/mpo/wp-content/themes/Travelo/js/header.php on line 2
+[30-May-2014 13:09:23 America/Chicago] PHP Fatal error:  Call to undefined function language_attributes() in /home3/godman69/public_html/projects/mpo/wp-content/themes/Travelo/js/header.php on line 2

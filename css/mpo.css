@@ -1,0 +1,29 @@
+.hiddenActivity{
+	display: none;
+	background: white;
+}
+-
+div.button-group{
+
+	padding-left:100px;
+	padding-top:10px;  
+}
+#package_attributes .attri_row{
+	padding: 5px;
+	min-height: 50px;
+	margin-top: 10px;
+	border-bottom: 3px solid black;
+}
+
+#package_attributes .left{
+	padding-left:10px; 
+	width: 20%;
+	float: left;
+}
+#package_attributes .right {
+	width: 75%;
+	float: right;
+}
+#package_attributes img{
+	background-color: rgb(171, 89, 188);
+}
